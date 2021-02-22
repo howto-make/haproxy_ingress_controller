@@ -1,0 +1,3 @@
+openssl genrsa -out ingress-controller.key 2048
+openssl req -new -key ingress-controller.key -out ingress-controller.csr -subj /CN=ingress-controller
+openssl x509 -req -in ingress-controller.csr -CA ca.pem -CAkey ca.key -CAcreateserial -out ingress-controller.pem -days 365
